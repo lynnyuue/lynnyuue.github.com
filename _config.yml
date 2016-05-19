@@ -14,8 +14,6 @@ author :
   name : Lynn Yue
   email : java.mf1987@gmail.com
   github : lynnyuue
-  twitter : lynn
-  feedburner : lynn
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -25,7 +23,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.io
+production_url : http://lynnyuue.github.io
 
 gems: ["jekyll-sitemap"]
 
