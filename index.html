@@ -1,0 +1,43 @@
+---
+layout: page
+title: Lynn's Blog
+tagline: Java Developer
+---
+<ul class="posts">
+{% for post in paginator.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">&lt;&lt;</a>
+    {% else %}
+    <span>&lt;&lt;</span>
+    {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+        {% if paginator.page == page %}
+            <span>{{ page }}</span>
+        {% else %}
+            {% if page == 1 %}
+            <a href="/index.html">{{ page }}</a>
+            {% else %}
+            <a href="{{ site.paginate_path | replace: ':num',page }}">{{ page
+            }}</a>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">&gt;&gt;</a>
+    {% else %}
+    <span>&gt;&gt;</span>
+    {% endif %}
+{% endif %}
+<ul>
+    {% for category in site.categories %}
+        <li class="category_list_item">
+            <a href="/showCategory.html?categoryName={{ category | first }}">{{
+                category | first }}</a> ( {{ category | last | size }} )
+        </li>
+    {% endfor %}
+</ul>
