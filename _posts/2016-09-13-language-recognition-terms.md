@@ -1,4 +1,11 @@
-#Introduced a number of important language recognition terms
+---
+layout: post
+title: "Introduced a number of important language recognition terms"
+description: "antlr4 learning notes"
+category: java 
+tags: [antlr4,java]
+---
+{% include JB/setup %}
 
 ###Language
 A language is a set of valid sentences.
