@@ -36,8 +36,7 @@ tagline: Java Developer
 <ul>
     {% for category in site.categories %}
         <li class="category_list_item">
-            <a href="/showCategory.html?categoryName={{ category | first }}">{{
-                category | first }}</a> ( {{ category | last | size }} )
+            {{ category | first }} ({{ category | last | size }})
         </li>
     {% endfor %}
 </ul>
