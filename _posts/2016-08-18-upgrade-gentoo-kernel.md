@@ -141,3 +141,91 @@ Exit the configuration and start the compilation process:
 ### Generate the GRUB2 configuration
 
     root # grub-mkconfig -o /boot/grub/grub.cfg
+
+### Optional: Building an initramfs
+
+In certain cases it is necessary to build an initramfs - an initial ram-based
+file system. The most common reason is when important file system locations
+(like /usr/ or /var/) are on separate partitions. With an initramfs, these
+partitions can be mounted using the tools available inside the initramfs.
+
+Without an initramfs, there is a huge risk that the system will not boot up
+properly as the tools that are responsible for mounting the file systems need
+information that resides on those file systems. An initramfs will pull in the
+necessary files into an archive which is used right after the kernel boots, but
+before the control is handed over to the init tool. Scripts on the initramfs
+will then make sure that the partitions are properly mounted before the system
+continues booting.
+
+To install an initramfs, install sys-kernel/genkernel first, then have it
+generate an initramfs:
+
+    root #emerge --ask sys-kernel/genkernel
+    root #genkernel --install initramfs
+
+In order to enable specific support in the initramfs, such as lvm or raid, add
+in the appropriate options to genkernel. See genkernel --help for more
+information. In the next example we enables support for LVM and software raid
+(mdadm):
+
+    root #genkernel --lvm --mdadm --install initramfs
+
+The initramfs will be stored in /boot/. The resulting file can be found by
+simply listing the files starting with initramfs:
+
+    root #ls /boot/initramfs*
+
+### Alternative: Using genkernel
+
+If a manual configuration looks too daunting, then using genkernel is
+recommended. It will configure and build the kernel automatically.
+
+genkernel works by configuring a kernel nearly identically to the way the
+installation CD kernel is configured. This means that when genkernel is used to
+build the kernel, the system will generally detect all hardware at boot-time,
+just like the installation CD does. Because genkernel doesn't require any
+manual kernel configuration, it is an ideal solution for those users who may
+not be comfortable compiling their own kernels.
+
+Now, let's see how to use genkernel. First, emerge the sys-kernel/genkernel
+ebuild:
+
+    root #emerge --ask sys-kernel/genkernel
+
+Next, edit the /etc/fstab file so that the line containing /boot/ as second
+field has the first field pointing to the right device. If the partitioning
+example from the handbook is followed, then this device is most likely
+/dev/sda2 with the ext2 file system. This would make the entry in the file look
+like so:
+
+    root #nano -w /etc/fstab
+
+>FILE /etc/fstab Configuring the /boot mountpoint
+>/dev/sda2   /boot   ext2    defaults    0 2
+
+Note
+Further in the Gentoo installation, /etc/fstab will be configured again. The
+/boot setting is needed right now as the genkernel application reads in this
+configuration.
+
+Now, compile the kernel sources by running genkernel all. Be aware though, as
+genkernel compiles a kernel that supports almost all hardware, this compilation
+will take quite a while to finish!
+
+Note
+If the boot partition doesn't use ext2 or ext3 as filesystem it might be
+necessary to manually configure the kernel using genkernel --menuconfig all and
+add support for this particular filesystem in the kernel (i.e. not as a
+module). Users of LVM2 will probably want to add --lvm as an argument as well.
+
+    root #genkernel all
+
+Once genkernel completes, a kernel, full set of modules and initial ram disk
+(initramfs) will be created. We will use the kernel and initrd when configuring
+a boot loader later in this document. Write down the names of the kernel and
+initrd as this information is used when the boot loader configuration file is
+edited. The initrd will be started immediately after booting to perform
+hardware autodetection (just like on the installation CD) before the "real"
+system starts up.
+
+    root #ls /boot/kernel* /boot/initramfs*
