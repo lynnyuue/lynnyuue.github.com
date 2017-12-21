@@ -4,3 +4,53 @@ theme :
 ---
 {% include JB/setup %}
 {% include themes/bootstrap-3/default.html %}
+<!-- HTML elements for search -->
+<style>
+#search-container{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+#search-input{
+
+}
+#results-container{
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+}
+#results-container li{
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</style>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="search...">
+    <ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="{{ site.baseurl }}/javascripts/simple-jekyll-search.min.js"></script>
+<script>
+document.getElementById('search-input').addEventListener('blur',function(e){
+    if(e.relatedTarget && e.relatedTarget.nodeName == 'A'){
+        return false;
+    }
+    document.getElementById('results-container').style.display = "none";
+},false);
+document.getElementById('search-input').addEventListener('focus',function(){
+    document.getElementById('results-container').style.display = "block";
+},false);
+SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json'
+});
+</script>
