@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "mysql character set"
-description: ""
-category: develop 
-tags: [linux,mysql]
+description: "check and update mysql character setting"
+category: database 
+tags: [mysql]
 ---
 {% include JB/setup %}
 

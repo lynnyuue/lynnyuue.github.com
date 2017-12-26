@@ -3,7 +3,7 @@ layout: post
 title: "Introduced a number of important language recognition terms"
 description: "antlr4 learning notes"
 category: java 
-tags: [antlr4,java]
+tags: [antlr4]
 ---
 {% include JB/setup %}
 
