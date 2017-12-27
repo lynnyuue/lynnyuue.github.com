@@ -33,10 +33,3 @@ tagline: Java Developer
     <span>&gt;&gt;</span>
     {% endif %}
 {% endif %}
-<ul>
-    {% for category in site.categories %}
-        <li class="category_list_item">
-            {{ category | first }} ({{ category | last | size }})
-        </li>
-    {% endfor %}
-</ul>
