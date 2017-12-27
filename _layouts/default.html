@@ -20,3 +20,11 @@ theme :
 
 <script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/search/js/cb-search.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript">
+$(function(){
+	var clss = ['bg-success','bg-secondary','bg-info','bg-warning'];
+	$("div.timeline-icon").each(function(index, item){
+		$(item).addClass(clss[index%4]);
+	});
+});
+</script>
