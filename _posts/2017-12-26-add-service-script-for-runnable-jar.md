@@ -10,7 +10,14 @@ tags: [ubuntu]
 1.add start/stop script
 ```bash
 #!/bin/bash
-APP_HOME=`pwd`
+SOURCE="$0"
+while [ -h "$SOURCE"  ]; do # resolve $SOURCE until the file is no longer a symlink
+    DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /*  ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+DIR="$( cd -P "$( dirname "$SOURCE"  )" && pwd  )"
+APP_HOME=$DIR
 APP_NAME=`ls $APP_HOME | grep jar`
 do_check(){
 	ps -ef | grep -v grep | grep $APP_NAME | awk '{print $2}' | while read pid
@@ -25,7 +32,8 @@ do_start(){
 		exit 1
 	fi
 	printf 'starting app\n'
-	exec java -jar $APP_HOME/$APP_NAME 2>/dev/null 1>&2 &
+	cd $APP_HOME
+	exec java -jar $APP_NAME 2>/dev/null 1>&2 &
 	printf 'app started\n'
 }
 do_stop(){
@@ -34,7 +42,7 @@ do_stop(){
 	do
 		kill -9 $pid
 	done
-	printf 'app  stopped\n'
+	printf 'app stopped\n'
 }
 
 case "$1" in

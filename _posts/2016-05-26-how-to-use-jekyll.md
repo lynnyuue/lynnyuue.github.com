@@ -1,16 +1,20 @@
 ---
 layout: post
 title: "how to use jekyll"
-description: ""
-category: 
+description: "jekyll guide"
+category: jekyll
 tags: []
 ---
 {% include JB/setup %}
 
-### create post page
-
-    rake post title="title name"
+### create file
+```bash
+#create new post file
+rake post title="title name"
+```
 
 ### preview
-
-    jekyll server
+```bash
+#start local server
+jekyll server
+```

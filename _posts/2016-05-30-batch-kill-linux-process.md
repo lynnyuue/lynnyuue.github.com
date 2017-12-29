@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "batch kill linux process"
-description: ""
-category: os
-tags: [linux,shell]
+description: "batch kill tomcat server"
+category: linux
+tags: [shell]
 ---
 {% include JB/setup %}
 
 #### kill tomcat process
 
-    ps -aux | grep tomcat | grep -v grep | cut -c 9-15 | xargs kill -9
+```bash
+ps -aux | grep tomcat | grep -v grep | cut -c 9-15 | xargs kill -9
+```
