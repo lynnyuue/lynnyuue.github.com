@@ -17,14 +17,30 @@ theme :
 </div>
 
 <link rel="stylesheet" href="{{ "/search/css/cb-search.css" | prepend: site.baseurl }}">
-
+<link rel="stylesheet" href="{{ "/tagcloud/tagcloud.min.css" | prepend: site.baseurl }}">
 <script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/search/js/cb-search.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/tagcloud/tagcloud.min.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript">
 $(function(){
-	var clss = ['bg-success','bg-secondary','bg-info','bg-warning'];
-	$("div.timeline-icon").each(function(index, item){
-		$(item).addClass(clss[index%4]);
+	var tc = tagcloud();
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	function showTag(){
+		var tag_group = location.hash;
+		if(tag_group){
+			$("div.tag_wrapper").removeClass("show");
+			tag_group = tag_group.substr(1);
+			$("#"+tag_group).parent().addClass("show");
+		}
+	}
+	$("div.tagcloud a").on('click', function(){
+		setTimeout(function(){
+			showTag();
+		},100);
 	});
+	showTag();
 });
 </script>

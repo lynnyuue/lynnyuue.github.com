@@ -7,8 +7,6 @@ tags: [JPA]
 ---
 {% include JB/setup %}
 
-# JPA Access annotation
-
 ```java
 @Entity
 @Access(AccessType.FIELD)

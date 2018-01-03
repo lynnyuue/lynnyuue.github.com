@@ -3,30 +3,25 @@ layout: page
 title: Lynn's Blog
 tagline: Java Developer
 ---
-<div class="container">
-	<div class="featurette" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="timeline-centered">
-					{% for post in paginator.posts %}
-					<article class="timeline-entry">
-						<div class="timeline-entry-inner">
-							<div class="timeline-icon">
-								<i class="entypo-feather"></i>
-							</div>
-							<div class="timeline-label">
-								<h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date_to_string }}</span></h2>
-								<p>
-								{{ post.description }} ({{ post.content | number_of_words}})
-								</p>
-							</div>
-						</div>
-					</article>
-					{% endfor %}
-				</div>
-			</div>
+<div class="list-group">
+	{% for post in paginator.posts %}
+	<a href="{{ BASE_PATH }}{{ post.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+		<div class="d-flex w-100 justify-content-between">
+			<h4 class="mb-1">{{ post.title }}</h4>
+			<small class="text-muted">{{ post.date | date_to_string }}</small>
 		</div>
-	</div>
+		<p class="mb-1">{{ post.description }}</p>
+		{% unless post.tags == empty %}
+		{% assign tags_list = post.tags %}
+			{% for tag in tags_list %}
+			<small class="text-muted">
+			{{ tag }}
+			</small>
+			{% endfor %}
+		{% endunless %}
+		<span class="badge badge-default badge-pill">{{ post.content | number_of_words}}</span>
+	</a>
+	{% endfor %}
 </div>
 {% if paginator.total_pages > 1 %}
 <nav aria-label="Page navigation example">
