@@ -3,6 +3,6 @@ layout: post
 title: "dynamic add extra classpath"
 description: ""
 category: java
-tags: []
+tags: [classloader]
 ---
 {% include JB/setup %}
