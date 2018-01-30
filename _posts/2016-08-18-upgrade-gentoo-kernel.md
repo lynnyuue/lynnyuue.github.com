@@ -3,7 +3,7 @@ layout: post
 title: "upgrade gentoo kernel"
 description: "Gentoo Kernel/Upgrade"
 category: linux 
-tags: [linux,gentoo,kernel]
+tags: [gentoo,kernel]
 ---
 {% include JB/setup %}
 

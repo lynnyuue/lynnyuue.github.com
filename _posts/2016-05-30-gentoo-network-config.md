@@ -2,8 +2,8 @@
 layout: post
 title: "gentoo network config"
 description: "how to configuration network in gentoo"
-category: os
-tags: [linux,gentoo]
+category: linux
+tags: [gentoo]
 ---
 {% include JB/setup %}
 

@@ -3,7 +3,7 @@ layout: post
 title: "kde sound manager"
 description: "kde sound control"
 category: linux
-tags: [linux,gentoo,kde]
+tags: [gentoo,kde]
 ---
 {% include JB/setup %}
 

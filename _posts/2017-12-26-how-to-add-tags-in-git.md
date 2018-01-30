@@ -3,7 +3,7 @@ layout: post
 title: "how to add tags in git"
 description: "git tags operation"
 category: git
-tags: [git]
+tags: [tag]
 ---
 {% include JB/setup %}
 
