@@ -3,7 +3,7 @@ layout: post
 title: "add service script for runnable jar"
 description: "add start/stop service on ubuntu"
 category: linux
-tags: [ubuntu]
+tags: [script]
 ---
 {% include JB/setup %}
 
