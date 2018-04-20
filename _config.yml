@@ -25,7 +25,7 @@ author :
 #
 production_url : http://lynnyuue.github.io
 
-gems: ["jekyll-sitemap","jekyll-paginate"]
+gems: ["jekyll-sitemap","jekyll-paginate","jekyll-plantuml"]
 # pagging
 paginate: 10
 paginate_path: "page:num"
