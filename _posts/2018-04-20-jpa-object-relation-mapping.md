@@ -15,6 +15,7 @@ tags: [JPA]
 Many to One
 ----
 
+<center>
 {% plantuml %}
 class Employee {
 	long id
@@ -29,7 +30,7 @@ class Department {
 
 Employee "*" --> "0..1" Department
 {% endplantuml %}
-
+</center>
 
 
 ```java
