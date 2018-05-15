@@ -1,0 +1,16 @@
+@startuml
+
+class Employee {
+	long id
+	String name
+	long salary
+}
+
+class Department {
+	int id
+	String name
+}
+
+Employee "*1" --> "0..1" Department
+
+@enduml
