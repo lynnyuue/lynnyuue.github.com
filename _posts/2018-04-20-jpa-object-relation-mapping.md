@@ -15,24 +15,6 @@ tags: [JPA]
 Many to One
 ----
 
-<center>
-{% plantuml %}
-class Employee {
-	long id
-	String name
-	long salary
-}
-
-class Department {
-	int id
-	String name
-}
-
-Employee "*" --> "0..1" Department
-{% endplantuml %}
-</center>
-
-
 ```java
 @Entity
 public class Employee{
