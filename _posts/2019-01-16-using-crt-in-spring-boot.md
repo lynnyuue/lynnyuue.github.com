@@ -23,31 +23,31 @@ using [sslforfree](https://www.sslforfree.com/) apply for a free certificate
 
 1. create public and private key in server
 
-```bash
-openssl pkcs12 -export -clcerts -in certificate.crt -inkey private.key -out server.p12
-```
-
-> the password is required in this step, do not forgot it
+    ```bash
+    openssl pkcs12 -export -clcerts -in certificate.crt -inkey private.key -out server.p12
+    ```
+    
+    > the password is required in this step, do not forgot it
 
 2. search key alias
 
-```bash
-keytool -list -keystore server.p12
-Enter keystore password: [pwd]
-Keystore type: jks
-Keystore provider: SUN
-
-Your keystore contains 1 entry
-
-1, Jan 16, 2019, PrivateKeyEntry,
-Certificate fingerprint (SHA1): xxxxxx
-```
+    ```bash
+    keytool -list -keystore server.p12
+    Enter keystore password: [pwd]
+    Keystore type: jks
+    Keystore provider: SUN
+    
+    Your keystore contains 1 entry
+    
+    1, Jan 16, 2019, PrivateKeyEntry,
+    Certificate fingerprint (SHA1): xxxxxx
+    ```
 
 3. put server.p12 to jar folder and modify application.properties
 
-```java
-server.ssl.key-store=server.p12
-server.ssl.key-store-password=[pwd]
-server.ssl.key-store-type=PKCS12
-server.ssl.key-alias=1
-```
+    ```java
+    server.ssl.key-store=server.p12
+    server.ssl.key-store-password=[pwd]
+    server.ssl.key-store-type=PKCS12
+    server.ssl.key-alias=1
+    ```
