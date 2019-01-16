@@ -58,7 +58,11 @@ npm install -save-dev
 vscode
 
 >*Extensions*
+- Vetur(0.13.0): Vue tooling for VS Code
+- ESLint(1.7.0): Integrates ESLint into VS Code
+>>If you haven't installed ESLint either locally or globally do so by running npm install eslint in the workspace folder for a local install or npm install -g eslint for a global install.
 
-1. Vetur 0.13.0
-2. jshint 0.10.20
-3. ESLint 1.7.0 
+# Online Document
+
+- [Vue guide](https://cn.vuejs.org/v2/guide/)
+- [Element UI quickstart](http://element-cn.eleme.io/#/zh-CN/component/quickstart)
