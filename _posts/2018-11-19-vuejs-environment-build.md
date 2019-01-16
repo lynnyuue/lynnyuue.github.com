@@ -2,8 +2,8 @@
 layout: post
 title: "vue.js environment build"
 description: "vue developer environment build guide"
-category: 
-tags: []
+category: RIA
+tags: [vuejs]
 ---
 {% include JB/setup %}
 
