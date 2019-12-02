@@ -5,8 +5,8 @@ description: "Can not rename linux file use File.renameTo function"
 category: java
 tags: [io]
 ---
-{% include JB/setup %}
 
+**java File.renameTo not work**
 
 *Javadoc:*
 >Many aspects of the behavior of this method are inherently platform-dependent: The rename operation might not be able to move a file from one filesystem to another, it might not be atomic, and it might not succeed if a file with the destination abstract pathname already exists. The return value should always be checked to make sure that the rename operation was successful.

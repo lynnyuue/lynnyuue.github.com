@@ -5,7 +5,7 @@ description: "delete files on linux when files number is 1 million"
 category: linux
 tags: [script]
 ---
-{% include JB/setup %}
+
 
 当目录下的文件数量非常多时，不能通过普通的方式删除
 

@@ -5,7 +5,6 @@ description: "jekyll guide"
 category: jekyll
 tags: [guide]
 ---
-{% include JB/setup %}
 
 ### create file
 ```bash

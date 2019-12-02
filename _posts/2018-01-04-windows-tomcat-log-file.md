@@ -5,7 +5,7 @@ description: "how to make tomcat write log file to log direcotry on windows"
 category: java
 tags: [tomcat,windows]
 ---
-{% include JB/setup %}
+
 
 1.modify startup.bat
 

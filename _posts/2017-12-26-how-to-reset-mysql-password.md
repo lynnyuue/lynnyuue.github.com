@@ -5,7 +5,7 @@ description: "reset mysql password when forget it"
 category: database
 tags: [mysql]
 ---
-{% include JB/setup %}
+
 
 1.stop mysql server
 

@@ -5,7 +5,7 @@ description: "git tags operation"
 category: git
 tags: [tag]
 ---
-{% include JB/setup %}
+
 
 ### add tag
 

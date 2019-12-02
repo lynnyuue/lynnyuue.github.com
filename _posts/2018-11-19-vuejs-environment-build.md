@@ -5,7 +5,8 @@ description: "vue developer environment build guide"
 category: RIA
 tags: [vuejs]
 ---
-{% include JB/setup %}
+
+How to build development environment for vue 3.x.
 
 # Installation
 

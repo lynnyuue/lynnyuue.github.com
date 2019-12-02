@@ -5,7 +5,7 @@ description: "how to configuration network in gentoo"
 category: linux
 tags: [gentoo]
 ---
-{% include JB/setup %}
+
 
 #### static ip
 /etc/conf.d/net

@@ -5,7 +5,7 @@ description: "JPA mixed access mode with @Access"
 category: java
 tags: [JPA]
 ---
-{% include JB/setup %}
+
 
 ```java
 @Entity

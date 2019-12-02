@@ -5,7 +5,7 @@ description: "how to add jdbc driver to Crystal Reports"
 category: errors
 tags: [crystal]
 ---
-{% include JB/setup %}
+
 
 1.put jdbc driver to java lib folder
 

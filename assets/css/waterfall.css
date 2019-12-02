@@ -1,0 +1,10 @@
+@media (max-width: 800px) {
+    .waterfall .list-group{
+        width: calc(100% - 60px);
+    }
+}
+@media (min-width: 801px) {
+    .waterfall .list-group{
+        width: 300px;
+    }
+}

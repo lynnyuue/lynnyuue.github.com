@@ -5,7 +5,8 @@ description: "raspberry sources list"
 category: linux
 tags: [raspberry, apt-get]
 ---
-{% include JB/setup %}
+
+**how to replace apt-get default sources list**
 
 */etc/apt-sources.list*
 ```bash

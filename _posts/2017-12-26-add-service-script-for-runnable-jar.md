@@ -5,7 +5,7 @@ description: "add start/stop service on ubuntu"
 category: linux
 tags: [script]
 ---
-{% include JB/setup %}
+
 
 1.add start/stop script
 ```bash

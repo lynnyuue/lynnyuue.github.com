@@ -5,7 +5,7 @@ description: "What is inode?"
 category: linux
 tags: [inode]
 ---
-{% include JB/setup %}
+
 
 #### inode
 

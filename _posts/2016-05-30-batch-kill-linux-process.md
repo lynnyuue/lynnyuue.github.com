@@ -5,7 +5,6 @@ description: "batch kill tomcat server"
 category: linux
 tags: [shell]
 ---
-{% include JB/setup %}
 
 #### kill tomcat process
 

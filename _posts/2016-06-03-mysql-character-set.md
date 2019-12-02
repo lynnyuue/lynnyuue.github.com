@@ -5,7 +5,6 @@ description: "check and update mysql character setting"
 category: database 
 tags: [mysql]
 ---
-{% include JB/setup %}
 
 #### find mysql configuration file
 

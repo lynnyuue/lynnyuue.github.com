@@ -5,7 +5,8 @@ description: ""
 category: java
 tags: [JPA]
 ---
-{% include JB/setup %}
+
+**JPA study notes**
 
 > Pro JPA 2<br/>
 > Mastering the Java Persistence API<br/>

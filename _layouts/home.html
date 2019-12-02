@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%} {{ content }}
+
+  <div class="loading"></div>
+  <div class="waterfall"></div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+  <script src="/assets/scripts/jquery.loading.js" type="text/javascript"></script>
+  <script src="/assets/scripts/bootstrap-waterfall.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(".loading").loading();
+    var container = window.document.body;
+    var nextPagePath = "/blog/index.html";
+    var isLoading = false;
+    function renderResponse(id, response) {
+      var template = document.createElement("script");
+      template.type = "text/template";
+      template.id = "template0";
+      template.innerHTML = response;
+      container.appendChild(template);
+      getNextPagePath(response);
+    }
+    function getNextPagePath(response) {
+      var path = $(response)
+        .last()
+        .html();
+      if (path) {
+        nextPagePath = path.trim() + "/";
+      } else {
+        nextPagePath = "";
+      }
+      return nextPagePath;
+    }
+    function loadMore() {
+      if (!nextPagePath || isLoading) {
+        return;
+      }
+      isLoading = true;
+      $(".loading").loading({ progress: 0 });
+      $.ajax(nextPagePath, {
+        success: function (response) {
+          getNextPagePath(response);
+          $(".waterfall")
+            .data("mystist.waterfall")
+            .addPins($(response));
+          setTimeout(() => {
+            $(".loading").loading({ progress: 100 });
+            isLoading = false;
+          }, 1000);
+        }
+      });
+    }
+    function hasScrollbar() {
+      return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
+    }
+    function loadMoreIfNeeded() {
+      if (!hasScrollbar()) {
+        setTimeout(()=>{
+          $(".waterfall").trigger("finishing.mystist.waterfall"); 
+        }, 1000);
+      }
+    }
+    $.ajax(nextPagePath, {
+      success: function (response) {
+        renderResponse("template0", response);
+        $(".loading").loading({ progress: 100 });
+        $(".waterfall")
+          .data("bootstrap-waterfall-template", $("#template0").html())
+          .on("finishing.mystist.waterfall", function () {
+            loadMore();
+          })
+          .waterfall();
+        loadMoreIfNeeded();
+      }
+    });
+  </script>
+</div>

@@ -5,7 +5,7 @@ description: "Gentoo Kernel/Upgrade"
 category: linux 
 tags: [gentoo,kernel]
 ---
-{% include JB/setup %}
+
 
 ### make a backup of the current kernel configuration
 

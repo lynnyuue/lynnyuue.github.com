@@ -1,11 +1,12 @@
 ---
 layout: post
 title: "using crt in spring boot"
-description: ""
+description: "add ssl certificate in spring boot application"
 category: java
-tags: [spring,ssl]
+tags: [spring, ssl]
 ---
-{% include JB/setup %}
+
+According to the security policy requirements, we need to enable the https protocol and add ssl certificate.
 
 # apply new certificate
 
