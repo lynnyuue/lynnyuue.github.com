@@ -6,6 +6,7 @@ category: linux
 tags: [script]
 ---
 
+*spring boot runnable jar boot script on ubuntu/debian*
 
 1.add start/stop script
 ```bash

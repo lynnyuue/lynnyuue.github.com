@@ -6,6 +6,8 @@ category: linux
 tags: [inode]
 ---
 
+> why no space left on device even if disk have free space
+
 *当你的 Linux 系统无法创建新文件时，有可能是你的磁盘满了，还有可能是你的磁盘的 inode 用光了，我们今天要说的就是后一种情况，要解决这个问题，只能是删除一些文件，
 但是一般情况下，其实是你的系统中的某个地方产生了大量的你并不需要的文件，你要做的就是找到他们并删除就可以了，
 我并不是让你删除你有用的文件，因为你一般不会有那么多有用的文件来把系统的 inode 用光。*

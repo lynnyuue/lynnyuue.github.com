@@ -6,6 +6,7 @@ category: java
 tags: [tomcat,windows]
 ---
 
+*How to make tomcat write log file to log directory on windows?*
 
 1.modify startup.bat
 

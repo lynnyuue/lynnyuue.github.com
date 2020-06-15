@@ -6,6 +6,8 @@ category: java
 tags: [spring, ssl]
 ---
 
+*How to import certificate to jks and used in spring boot application*
+
 According to the security policy requirements, we need to enable the https protocol and add ssl certificate.
 
 # apply new certificate

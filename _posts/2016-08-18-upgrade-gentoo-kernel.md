@@ -6,6 +6,7 @@ category: linux
 tags: [gentoo,kernel]
 ---
 
+*gentoo kernel upgrade guide*
 
 ### make a backup of the current kernel configuration
 

@@ -6,6 +6,7 @@ category: java
 tags: [JPA]
 ---
 
+*JPA mixed access mode*
 
 ```java
 @Entity

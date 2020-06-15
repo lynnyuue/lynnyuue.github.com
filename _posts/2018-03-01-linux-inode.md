@@ -6,6 +6,7 @@ category: linux
 tags: [inode]
 ---
 
+*What is inode?*
 
 #### inode
 

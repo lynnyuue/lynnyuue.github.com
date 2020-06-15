@@ -6,6 +6,8 @@ category: linux
 tags: [gentoo,kde]
 ---
 
+*add voice control in KDE*
+
 >KDE默认没有集成kmix，安装kmix然后设置成开机启动。
 状态栏会有音量调节图标，使用快捷键*Fn+UP*/*FN+DOWN*也可以调节
 

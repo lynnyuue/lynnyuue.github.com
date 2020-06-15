@@ -6,14 +6,16 @@ category: jekyll
 tags: [guide]
 ---
 
+*jekyll guide*
+
 ### create file
 ```bash
 #create new post file
-rake post title="title name"
+rake new 
 ```
 
 ### preview
 ```bash
 #start local server
-jekyll server
+bundle exec jekyll serve
 ```
